@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="DK-fish">
+
+
+    <meta name="subtitle" content="仰望星空， 脚踏实地">
+
+
+    <meta name="description" content="DK-fish Blog">
+
+
+
+<title>Markdown基础 | Miscellaneous Journals</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <!-- 雪花特效 -->
+    <script type="text/javascript" src="https://libs.baidu.com/jquery/1.8.3/jquery.js"></script>
+    <script type="text/javascript" src="https://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/snow.js"></script>
+    <script>
+        !
+        function() {
+        function n(n, e, t) {
+        return n.getAttribute(e) || t
+        }
+        function e(n) {
+        return document.getElementsByTagName(n)
+        }
+        function t() {
+            var t = e("script"),
+        o = t.length,
+        i = t[o - 1];
+        return {
+            l: o,
+            z: n(i, "zIndex", -1),     //置于主页面背后
+            o: n(i, "opacity", .5),     //线条透明度
+            c: n(i, "color", "0,0,0"),  //线条颜色
+            n: n(i, "count", 70)    //线条数量
+        }
+    }
+    function o() {
+        a = m.width = window.innerWidth || 
+document.documentElement.clientWidth || document.body.clientWidth,
+        c = m.height = window.innerHeight || 
+document.documentElement.clientHeight || document.body.clientHeight
+    }
+    function i() {
+        r.clearRect(0, 0, a, c);
+        var n, e, t, o, m, l;
+        s.forEach(function(i, x) {
+            for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 
+1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 
+1), e = x + 1; e < u.length; e++) n = u[e],
+            null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y, l 
+= o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, 
+i.y -= .03 * m), t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 
+2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), 
+r.lineTo(n.x, n.y), r.stroke()))
+        }),
+        x(i)
+    }
+    var a, c, u, m = document.createElement("canvas"),
+    d = t(),
+    l = "c_n" + d.l,
+    r = m.getContext("2d"),
+    x = window.requestAnimationFrame || window.webkitRequestAnimationFrame 
+|| window.mozRequestAnimationFrame || window.oRequestAnimationFrame || 
+window.msRequestAnimationFrame ||
+    function(n) {
+        window.setTimeout(n, 1e3 / 45)
+    },
+    w = Math.random,
+    y = {
+        x: null,
+        y: null,
+        max: 2e4
+    };
+    m.id = l,
+    m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + 
+";opacity:" + d.o,
+    e("body")[0].appendChild(m),
+    o(),
+    window.onresize = o,
+    window.onmousemove = function(n) {
+        n = n || window.event,
+        y.x = n.clientX,
+        y.y = n.clientY
+    },
+    window.onmouseout = function() {
+        y.x = null,
+        y.y = null
+    };
+    for (var s = [], f = 0; d.n > f; f++) {
+        var h = w() * a,
+        g = w() * c,
+        v = 2 * w() - 1,
+        p = 2 * w() - 1;
+        s.push({
+            x: h,
+            y: g,
+            xa: v,
+            ya: p,
+            max: 6e3
+        })
+    }
+    u = s.concat([y]),
+    setTimeout(function() {
+        i()
+    },
+    100)
+ } ();
+ </script>       
+
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">YZX&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">YZX&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Markdown基础</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">DK-fish</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2025-01-03&nbsp;&nbsp;23:22</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/">编程基础</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>Markdown是一种轻量级标记语言，使用纯文本格式编写文档，具有简洁、高效、易读、易写的特点。可与HTML混编，可导出 HTML、PDF 以及本身的 .md 格式的文件。本文基于Typora和VScode软件,简单回顾了markdown常用命令，便于后续撰文。<br><strong>tip：注意空格的使用</strong></p>
+<hr>
+<h2 id="多级标题"><a href="#多级标题" class="headerlink" title="多级标题"></a>多级标题</h2><p>代码:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">...</span><br><span class="line">###### 六级标题</span><br><span class="line">(一共六级标题)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>快捷键：Ctrl+加号&#x2F;减号</p>
+</blockquote>
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">---或者***</span><br></pre></td></tr></table></figure>
+
+<h2 id="文字显示"><a href="#文字显示" class="headerlink" title="文字显示"></a>文字显示</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">加粗： ** **</span><br><span class="line">删除： ~~ ~~</span><br><span class="line">下滑：&lt;u&gt; &lt;u&gt;</span><br><span class="line">斜体： * *</span><br><span class="line">高亮：== ==</span><br></pre></td></tr></table></figure>
+
+<p>effect：</p>
+<blockquote>
+<p><strong>加粗</strong><br><del>删除</del><br><u>下滑</u><br><em>斜体</em><br>&#x3D;&#x3D;高亮&#x3D;&#x3D;</p>
+</blockquote>
+<p>快捷键:</p>
+<blockquote>
+<p>加粗：Ctrl+B<br>下滑：Ctrl+U<br>斜体：Ctrl+I</p>
+</blockquote>
+<h2 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a>上下标</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x^2^</span><br><span class="line">H~2~O</span><br></pre></td></tr></table></figure>
+<p>effect：</p>
+<blockquote>
+<p>x^2^<br>H<del>2</del>O</p>
+</blockquote>
+<h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*/-/+ +空格</span><br></pre></td></tr></table></figure>
+<p>effect：</p>
+<blockquote>
+<ul>
+<li>一级分类1</li>
+<li>一级分类2</li>
+<li>一级分类3</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>一级分类<ul>
+<li>二级分类<ul>
+<li>三级分类</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数字+.+空格</span><br></pre></td></tr></table></figure>
+<p>effect：</p>
+<blockquote>
+<ol>
+<li>title1</li>
+<li>title2</li>
+<li>title3<ul>
+<li>subtitle1</li>
+<li>subtitle2<ul>
+<li>text</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>title4</li>
+</ol>
+</blockquote>
+<h2 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- [ ] study</span><br><span class="line">- [y] sleep</span><br><span class="line">- [x] play game</span><br></pre></td></tr></table></figure>
+<p>effect：</p>
+<blockquote>
+<ul>
+<li><input disabled="" type="checkbox"> study</li>
+<li><input disabled="" type="checkbox"> sleep</li>
+<li><input checked="" disabled="" type="checkbox"> play game</li>
+</ul>
+</blockquote>
+<h2 id="区块显示"><a href="#区块显示" class="headerlink" title="区块显示"></a>区块显示</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;+回车</span><br></pre></td></tr></table></figure>
+<p>effect：</p>
+<blockquote>
+<p>layer1</p>
+<blockquote>
+<p>layer2</p>
+<blockquote>
+<p>layer3</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">```python/java/c#/js/text</span><br><span class="line">内容</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
+
+<h2 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`z = x + y;`</span><br></pre></td></tr></table></figure>
+<p>effect:</p>
+<blockquote>
+<p><code>z = x + y;</code></p>
+</blockquote>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">www.bilibili.com</span><br><span class="line">[哔哩哔哩干杯](https://www.bilibili.com)</span><br></pre></td></tr></table></figure>
+<p>effect:</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.bilibili.com/">www.bilibili.com</a><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/">哔哩哔哩干杯</a></p>
+</blockquote>
+<h2 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h2><p>代码:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![不显示的文字](图片路径 &quot;图片title&quot;)</span><br></pre></td></tr></table></figure>
+<p>effect：</p>
+<blockquote>
+<p><img src="C:\Users\Fish\Desktop\Blog\themes\hexo-theme-Chic\source\image" alt="blog头像" title="vb581wpc"></p>
+</blockquote>
+<h2 id="脚注"><a href="#脚注" class="headerlink" title="脚注"></a>脚注</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[^文本]</span><br><span class="line">[^文本]:解释说明</span><br></pre></td></tr></table></figure>
+<p>effect：</p>
+<blockquote>
+<p>PINN[^1]<br>[^1]: 物理信息神经网络</p>
+</blockquote>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>代码:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">| year | month |  day |</span><br><span class="line">| :--- | :---: | ---: |</span><br><span class="line">| 2023 | 1     | 1    |</span><br><span class="line">| 2024 | 2 | 2 |</span><br><span class="line">| 2025 | 3 | 3 |</span><br></pre></td></tr></table></figure>
+<p>effect:</p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">year</th>
+<th align="center">month</th>
+<th align="right">day</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">2023</td>
+<td align="center">1</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">2024</td>
+<td align="center">2</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">2025</td>
+<td align="center">3</td>
+<td align="right">3</td>
+</tr>
+</tbody></table>
+</blockquote>
+<h2 id="插入公式"><a href="#插入公式" class="headerlink" title="插入公式"></a>插入公式</h2><p>代码:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$公式$</span><br></pre></td></tr></table></figure>
+<p>effect:</p>
+<blockquote>
+<p>$ y&#x3D;WX+b $</p>
+</blockquote>
+<p><em>其他公式代码详见专题</em></p>
+<h2 id="表情包"><a href="#表情包" class="headerlink" title="表情包"></a>表情包</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:smile:、:cry、:man、:star:</span><br></pre></td></tr></table></figure>
+<p>effect:</p>
+<blockquote>
+<p>:smile:  :cry:  :man:  :star:</p>
+</blockquote>
+<h2 id="生成目录"><a href="#生成目录" class="headerlink" title="生成目录"></a>生成目录</h2><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[toc]</span><br></pre></td></tr></table></figure>
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>DK-fish</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://dk-fish.github.io/2025/01/03/Markdown%E5%9F%BA%E7%A1%80/">http://dk-fish.github.io/2025/01/03/Markdown%E5%9F%BA%E7%A1%80/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/markdown/"># markdown</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2025/01/04/python%E5%9F%BA%E7%A1%80/">python基础</a>
+            
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© DK-fish | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
