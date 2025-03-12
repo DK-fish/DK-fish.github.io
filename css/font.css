@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'yzx';
+    /* 字体名自定义即可 */
+    /* src: url('https://cdn.jsdelivr.net/gh/tzy13755126023/BLOG_SOURCE/font/ZhuZiAWan.woff2'); */
+    /* src: url('https://npm.elemecdn.cohexom/ethan4116-blog/lib/font/ZhuZiAWan.ttf'); */
+    src: url('../font/ZhuZiAWan.ttf') format("truetype");
+    /* 字体文件路径 */
+    font-display: swap;
+}
+
+body,
+.gitcalendar {
+    font-family: yzx !important;
+}
+
